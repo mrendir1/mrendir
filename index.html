@@ -31,9 +31,9 @@ button{font-family:inherit}
 /* ===== Sidebar (rail) ===== */
 .rail{position:fixed;top:0;left:0;height:100vh;width:76px;z-index:30}
 .rail-panel{position:absolute;inset:0 auto 0 0;width:76px;overflow:hidden auto;background:#fff;border-right:1px solid var(--line);padding:22px 14px;display:flex;flex-direction:column;gap:20px;transition:width .28s ease,box-shadow .28s ease}
-.rail:hover .rail-panel,.rail:focus-within .rail-panel{width:264px;box-shadow:12px 0 36px rgba(20,20,20,.10)}
+@media (hover:hover) and (min-width:901px){.rail:hover .rail-panel,.rail:focus-within .rail-panel{width:264px;box-shadow:12px 0 36px rgba(20,20,20,.10)}}
 .lbl{opacity:0;white-space:nowrap;transition:opacity .2s ease}
-.rail:hover .lbl,.rail:focus-within .lbl{opacity:1}
+@media (hover:hover) and (min-width:901px){.rail:hover .lbl,.rail:focus-within .lbl{opacity:1}}
 .rlogo{display:flex;align-items:baseline;padding:0 12px;font-family:'Bebas Neue',Arial,sans-serif;font-size:32px;letter-spacing:.04em;color:var(--ink);white-space:nowrap}
 .rlogo b{color:var(--accent);font-weight:400}
 .rprof{display:flex;align-items:center;gap:12px;padding:0 2px}
@@ -46,7 +46,7 @@ button{font-family:inherit}
 .rcta{border:0;width:100%;text-align:left;cursor:pointer;display:flex;align-items:center;gap:14px;min-height:48px;padding:0 12px;border-radius:12px;background:var(--accent);color:#111;font-weight:600;font-size:15px;margin-top:auto}
 main{margin-left:76px;position:relative;min-height:100vh}
 .dim{position:fixed;inset:0 0 0 76px;background:rgba(15,15,15,.45);opacity:0;pointer-events:none;transition:opacity .28s ease;z-index:25}
-.rail:hover ~ .dim,.rail:focus-within ~ .dim{opacity:1}
+@media (hover:hover) and (min-width:901px){.rail:hover ~ .dim,.rail:focus-within ~ .dim{opacity:1}}
 
 /* ===== Pages ===== */
 .page{display:none}
@@ -93,13 +93,53 @@ main{margin-left:76px;position:relative;min-height:100vh}
 .cta-box{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:28px 30px;border-radius:18px;background:#fff;border:1px solid var(--line)}
 .contact{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;padding-top:96px}
 .contact .row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:14px}
-@media (max-width:640px){.wrap{padding:56px 18px}.works{grid-template-columns:1fr}}
+
+/* ===== Mobile & tablet ===== */
+.mbar{display:none}
+@media (max-width:900px){
+ .mbar{display:flex;position:sticky;top:0;z-index:28;height:62px;align-items:center;justify-content:space-between;padding:0 14px 0 18px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+ .mbar .rlogo{padding:0;font-size:30px}
+ .mbtn{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);cursor:pointer}
+ .rail{width:0;height:100vh;z-index:40}
+ .rail-panel{width:284px;transform:translateX(-105%);transition:transform .3s ease}
+ body.menu-open .rail-panel{transform:none;box-shadow:12px 0 40px rgba(0,0,0,.18)}
+ .rail .lbl{opacity:1}
+ main{margin-left:0}
+ .dim{inset:0;z-index:35}
+ body.menu-open .dim{opacity:1;pointer-events:auto}
+ body.menu-open{overflow:hidden}
+ .wrap{padding:48px 18px}
+ .hero{padding-top:36px;gap:36px}
+ .hero h1{font-size:clamp(48px,13vw,72px)}
+ .hero-text p{font-size:16px!important}
+ .frame{max-width:270px;margin-right:18px}
+ .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+ .stats span{font-size:12px;line-height:1.35;display:block}
+ .stats b{font-size:40px}
+ .split{gap:40px}
+ .filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;margin:0 -18px;padding-left:18px;padding-right:18px}
+ .filters button{flex-shrink:0}
+ .works{grid-template-columns:1fr}
+ .cta-box{padding:22px}
+ .cta-box .btn{width:100%;justify-content:center}
+ .contact{padding-top:56px}
+ .contact .row{flex-direction:column;align-items:stretch;width:100%;max-width:360px}
+ .contact .row .btn{justify-content:center}
+}
+@media (min-width:641px) and (max-width:900px){.works{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 
-<aside class="rail" aria-label="Menu samping">
+<header class="mbar">
+  <a href="#tentang" class="rlogo" data-go="tentang">RENDI<b>.</b></a>
+  <button class="mbtn" id="menuBtn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="sidebar">
+    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</header>
+<aside class="rail" id="sidebar" aria-label="Menu samping">
   <div class="rail-panel">
     <a href="#tentang" class="rlogo" data-go="tentang">R<span class="lbl">ENDI</span><b>.</b></a>
     <div class="rprof">
@@ -247,6 +287,13 @@ function show(id){
 document.addEventListener('click',e=>{const t=e.target.closest('[data-go]');if(!t)return;e.preventDefault();const id=t.dataset.go;if(location.hash!=='#'+id)history.pushState(null,'','#'+id);show(id);document.activeElement&&document.activeElement.blur()});
 window.addEventListener('popstate',()=>show(location.hash.slice(1)));
 show(location.hash.slice(1));
+
+const btn=document.getElementById('menuBtn');
+function setMenu(open){document.body.classList.toggle('menu-open',open);btn.setAttribute('aria-expanded',open);btn.setAttribute('aria-label',open?'Tutup menu':'Buka menu')}
+btn.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
+document.querySelector('.dim').addEventListener('click',()=>setMenu(false));
+document.querySelectorAll('.rail-panel a, .rail-panel button').forEach(el=>el.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
 </script>
 </body>
 </html>
