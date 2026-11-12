@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammad Rendi Ramdani — Multimedia &amp; Content Creator</title>
+<meta name="description" content="Portofolio Muhammad Rendi Ramdani: video editing, motion graphic, desain grafis, animasi 2D/3D, dan konten media sosial.">
+<meta property="og:title" content="Muhammad Rendi Ramdani — Multimedia & Content Creator">
+<meta property="og:description" content="Portofolio video, motion graphic, desain grafis, dan animasi.">
+<meta property="og:image" content="assets/foto.jpg">
+<link rel="icon" href="assets/foto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#D7F205;--accent-text:#4F5E00;--bg:#F7F6F2;--alt:#EFEDE6;--card:#FFFFFF;--line:#E5E3DC;--ink:#151515;--text:#1A1A1A;--muted:#5A5A5A}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',Arial,sans-serif;font-size:16px;line-height:1.6}
+h1,h2,h3,p{margin:0}
+a{color:var(--accent-text);text-decoration:none}
+button{font-family:inherit}
+.label{font-size:14px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-text)}
+.display{font-family:'Bebas Neue',Arial,sans-serif;font-weight:400;line-height:1;color:var(--ink)}
+.h2{font-size:clamp(40px,5vw,60px)}
+.wrap{max-width:1200px;margin:0 auto;padding:80px 24px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 26px;border-radius:999px;font-weight:600;font-size:16px;border:0;cursor:pointer}
+.btn-primary{background:var(--accent);color:#111}
+.btn-ghost{border:1.5px solid #CFCCC3;color:var(--ink);background:transparent}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px}
+
+/* ===== Sidebar (rail) ===== */
+.rail{position:fixed;top:0;left:0;height:100vh;width:76px;z-index:30}
+.rail-panel{position:absolute;inset:0 auto 0 0;width:76px;overflow:hidden auto;background:#fff;border-right:1px solid var(--line);padding:22px 14px;display:flex;flex-direction:column;gap:20px;transition:width .28s ease,box-shadow .28s ease}
+.rail:hover .rail-panel,.rail:focus-within .rail-panel{width:264px;box-shadow:12px 0 36px rgba(20,20,20,.10)}
+.lbl{opacity:0;white-space:nowrap;transition:opacity .2s ease}
+.rail:hover .lbl,.rail:focus-within .lbl{opacity:1}
+.rlogo{display:flex;align-items:baseline;padding:0 12px;font-family:'Bebas Neue',Arial,sans-serif;font-size:32px;letter-spacing:.04em;color:var(--ink);white-space:nowrap}
+.rlogo b{color:var(--accent);font-weight:400}
+.rprof{display:flex;align-items:center;gap:12px;padding:0 2px}
+.rprof img{width:44px;height:44px;flex-shrink:0;border-radius:50%;object-fit:cover;object-position:top}
+.rhead{height:22px;padding:0 12px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#6B6B6B}
+.rlink{border:0;background:transparent;width:100%;text-align:left;cursor:pointer;display:flex;align-items:center;gap:14px;min-height:46px;padding:0 12px;border-radius:12px;color:#2B2B2B;font-size:15px;font-weight:500}
+.rlink svg,.rcta svg{flex-shrink:0}
+.rlink:hover,.rlink:focus-visible{background:#F1F0EA;color:var(--ink)}
+.rlink.on{background:#F1F0EA;color:var(--ink);font-weight:600;box-shadow:inset 3px 0 0 #9DB300}
+.rcta{border:0;width:100%;text-align:left;cursor:pointer;display:flex;align-items:center;gap:14px;min-height:48px;padding:0 12px;border-radius:12px;background:var(--accent);color:#111;font-weight:600;font-size:15px;margin-top:auto}
+main{margin-left:76px;position:relative;min-height:100vh}
+.dim{position:fixed;inset:0 0 0 76px;background:rgba(15,15,15,.45);opacity:0;pointer-events:none;transition:opacity .28s ease;z-index:25}
+.rail:hover ~ .dim,.rail:focus-within ~ .dim{opacity:1}
+
+/* ===== Pages ===== */
+.page{display:none}
+.page.show{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.hero{display:flex;flex-wrap:wrap;align-items:center;gap:56px;padding-top:88px}
+.hero-text{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.hero h1{font-size:clamp(56px,8vw,104px);line-height:.95}
+.hero-photo{flex:1 1 300px;display:flex;justify-content:center}
+.frame{position:relative;width:100%;max-width:360px}
+.frame::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--accent);border-radius:20px}
+.frame img{position:relative;display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:20px}
+.stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:18px}
+.stats b{display:block;font-family:'Bebas Neue',Arial,sans-serif;font-weight:400;font-size:48px;line-height:1;color:var(--ink)}
+.stats span{font-size:14px;color:var(--muted)}
+.alt{background:var(--alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.split{display:flex;flex-wrap:wrap;gap:56px}
+.timeline{border-left:2px solid #D9D6CD;padding-left:26px}
+.tl{position:relative;padding-bottom:32px}
+.tl::before{content:"";position:absolute;left:-34px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent)}
+.tl.past::before{background:#BDBAB0}
+.tl small{font-size:14px;color:#616161}
+.tl h3{font-size:20px;font-weight:600;color:var(--ink)}
+.tl p{margin-top:8px;font-size:15px;color:#555;max-width:640px}
+.grid{display:grid;gap:18px}
+.skills{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.skill{padding:26px;display:flex;flex-direction:column;gap:10px}
+.skill h3{font-size:19px;font-weight:600;color:var(--ink)}
+.skill p{font-size:15px;color:var(--muted)}
+.skill em{font-style:normal;font-size:13px;font-weight:500;color:var(--accent-text)}
+.filters{display:flex;gap:10px;flex-wrap:wrap}
+.filters button{min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid #CFCCC3;background:transparent;color:#2B2B2B;font-size:14px;font-weight:600;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#111}
+.works{grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:22px}
+.work{display:flex;flex-direction:column;overflow:hidden;color:var(--text)}
+.work .img{overflow:hidden;aspect-ratio:16/9;background:var(--line)}
+.work img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.work:hover img{transform:scale(1.03)}
+.work .meta{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px}
+.work .meta small{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text)}
+.work .meta h3{font-size:17px;font-weight:600;color:var(--ink)}
+.work .meta p{font-size:14px;color:#5F5F5F}
+.cta-box{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:28px 30px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+.contact{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;padding-top:96px}
+.contact .row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:14px}
+@media (max-width:640px){.wrap{padding:56px 18px}.works{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<aside class="rail" aria-label="Menu samping">
+  <div class="rail-panel">
+    <a href="#tentang" class="rlogo" data-go="tentang">R<span class="lbl">ENDI</span><b>.</b></a>
+    <div class="rprof">
+      <img src="assets/foto.jpg" alt="">
+      <div class="lbl"><p style="font-size:14px;font-weight:600;color:#151515">M. Rendi Ramdani</p><p style="font-size:12px;color:#616161">Multimedia &amp; Content Creator</p></div>
+    </div>
+    <nav aria-label="Navigasi halaman" style="display:flex;flex-direction:column;gap:4px">
+      <p class="rhead"><span class="lbl">Menu</span></p>
+      <button class="rlink" data-go="tentang"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg><span class="lbl">Tentang Saya</span></button>
+      <button class="rlink" data-go="keahlian"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg><span class="lbl">Keahlian</span></button>
+      <button class="rlink" data-go="karya"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="lbl">Karya</span></button>
+      <button class="rlink" data-go="kontak"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="lbl">Kontak</span></button>
+    </nav>
+    <nav aria-label="Tautan" style="display:flex;flex-direction:column;gap:4px">
+      <p class="rhead"><span class="lbl">Tautan</span></p>
+      <a class="rlink" href="https://drive.google.com/drive/folders/1yB9iNetlG6OvQb0rKq1575wNYeXlBnlO?usp=sharing" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M10 9l5 3-5 3z"/></svg><span class="lbl">Folder Video</span></a>
+      <a class="rlink" href="https://www.linkedin.com/in/mrendir2/" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg><span class="lbl">LinkedIn</span></a>
+      <a class="rlink" href="https://wa.me/6283805429308" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.4 7.9L3 21l1.2-4.4A9 9 0 1 1 21 12z"/></svg><span class="lbl">WhatsApp</span></a>
+      <a class="rlink" href="mailto:mrendir1@gmail.com"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg><span class="lbl">Email</span></a>
+    </nav>
+    <button class="rcta" data-go="kontak"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg><span class="lbl">Hubungi Saya</span></button>
+  </div>
+</aside>
+<div class="dim" aria-hidden="true"></div>
+
+<main>
+  <!-- ===== HALAMAN 1: TENTANG SAYA + PENGALAMAN ===== -->
+  <div class="page" id="tentang">
+    <section class="wrap hero">
+      <div class="hero-text">
+        <p class="label">Tentang Saya · Multimedia &amp; Content Creator</p>
+        <h1 class="display">Muhammad Rendi Ramdani</h1>
+        <p style="max-width:600px;font-size:18px;color:#4A4A4A">Lebih dari 4 tahun membuat video promosi, motion graphic, desain grafis, animasi 2D/3D, dan konten media sosial — dari ide, produksi, sampai evaluasi performa.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:6px">
+          <button class="btn btn-primary" data-go="karya">Lihat Karya</button>
+          <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1yB9iNetlG6OvQb0rKq1575wNYeXlBnlO?usp=sharing" target="_blank" rel="noopener"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 4 20 12 6 20 6 4"/></svg>Tonton Video</a>
+        </div>
+        <div class="stats">
+          <div><b>4+</b><span>Tahun pengalaman</span></div>
+          <div><b>6</b><span>Bidang keahlian</span></div>
+          <div><b>10+</b><span>Software kreatif</span></div>
+        </div>
+      </div>
+      <div class="hero-photo"><div class="frame"><img src="assets/foto.jpg" alt="Foto Muhammad Rendi Ramdani"></div></div>
+    </section>
+    <section class="alt">
+      <div class="wrap split">
+        <div style="flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:28px">
+          <div><p class="label">Pengalaman</p><h2 class="display h2">Perjalanan Karier</h2></div>
+          <div class="timeline">
+            <div class="tl"><small>Jun 2022 – Sekarang · Kota Depok</small><h3>Multimedia &amp; Content Creator — ISO Jepang</h3><p>Mengedit video promosi, corporate, dan campaign; memproduksi animasi 2D/3D untuk materi pembelajaran; mendesain materi promosi; mengelola konten Instagram, TikTok, YouTube, dan Facebook; menyusun strategi digital marketing; serta mengelola website WordPress, landing page, dan LMS.</p></div>
+            <div class="tl past" style="padding-bottom:0"><small>Jul 2020 – Sep 2021 · Jakarta</small><h3>Security — PT Kereta Api Indonesia</h3><p>Patroli dan pengawasan area stasiun, penanganan situasi darurat, serta pelaporan kegiatan dan insiden.</p></div>
+          </div>
+        </div>
+        <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:18px">
+          <p class="label">Pendidikan</p>
+          <div class="card" style="padding:22px"><h3 style="font-size:17px;font-weight:600">SMK Bina Informatika</h3><p style="font-size:14px;color:#5A5A5A">Teknik Komputer dan Jaringan · 2017 – 2020</p></div>
+          <div class="card" style="padding:22px"><h3 style="font-size:17px;font-weight:600">Universitas Terbuka</h3><p style="font-size:14px;color:#5A5A5A">2024 – Sekarang</p></div>
+          <p class="label" style="margin-top:10px">Tools</p>
+          <p style="font-size:15px;color:#4A4A4A">Premiere Pro · After Effects · CapCut Pro · Photoshop · Illustrator · Affinity Designer · Lightroom · Canva · Blender · Moho · Figma · WordPress</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== HALAMAN 2: KEAHLIAN ===== -->
+  <div class="page" id="keahlian">
+    <section class="wrap" style="display:flex;flex-direction:column;gap:40px">
+      <div><p class="label">Keahlian</p><h2 class="display h2">Yang Bisa Saya Kerjakan</h2></div>
+      <div class="grid skills" id="skills"></div>
+    </section>
+  </div>
+
+  <!-- ===== HALAMAN 3: KARYA ===== -->
+  <div class="page" id="karya">
+    <section class="wrap" style="display:flex;flex-direction:column;gap:32px">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px">
+        <div><p class="label">Portofolio</p><h2 class="display h2">Karya Pilihan</h2></div>
+        <div class="filters" role="group" aria-label="Filter kategori karya" id="filters"></div>
+      </div>
+      <div class="grid works" id="works"></div>
+      <div class="cta-box">
+        <div><h3 style="font-size:20px;font-weight:600">Video, company profile &amp; animasi lengkap</h3><p style="font-size:15px;color:#5A5A5A">Kumpulan video promosi, company profile, dokumentasi kegiatan, dan animasi edukasi.</p></div>
+        <a class="btn btn-primary" href="https://drive.google.com/drive/folders/1yB9iNetlG6OvQb0rKq1575wNYeXlBnlO?usp=sharing" target="_blank" rel="noopener">Buka Folder Video</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== HALAMAN 4: KONTAK ===== -->
+  <div class="page" id="kontak">
+    <section class="wrap contact">
+      <p class="label">Kontak</p>
+      <h2 class="display" style="font-size:clamp(44px,6vw,76px)">Mari Bekerja Sama</h2>
+      <p style="max-width:560px;font-size:17px;color:#555">Terbuka untuk posisi Video Editor, Motion Graphic Designer, Content Creator, Graphic Designer, dan Multimedia Specialist di Jabodetabek.</p>
+      <div class="row">
+        <a class="btn btn-primary" href="mailto:mrendir1@gmail.com">mrendir1@gmail.com</a>
+        <a class="btn btn-ghost" href="https://wa.me/6283805429308" target="_blank" rel="noopener">WhatsApp 0838-0542-9308</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/mrendir2/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p style="margin-top:48px;font-size:13px;color:#6B6B6B">© 2026 Muhammad Rendi Ramdani · Kota Bogor, Jawa Barat</p>
+    </section>
+  </div>
+</main>
+
+<script>
+const skills=[
+ ['Video Editing','Video promosi, corporate, campaign, dan konten pendek untuk media sosial.','Premiere Pro · After Effects · CapCut Pro'],
+ ['Motion Graphic','Animasi teks, transisi, dan elemen visual yang membuat pesan lebih hidup.','After Effects'],
+ ['Desain Grafis','Feed media sosial, flyer, brosur, banner, logo, dan materi promosi.','Photoshop · Illustrator · Affinity · Canva'],
+ ['Animasi 2D/3D','Video animasi edukasi dan ilustrasi 3D untuk materi pembelajaran.','Moho · Blender'],
+ ['Social Media Content','Content planning, copywriting, dan analisis performa konten.','Instagram · TikTok · YouTube · Facebook'],
+ ['Fotografi & Website','Foto & video produk dan event, serta landing page dan LMS.','Lightroom · WordPress · Figma']];
+const works=[
+ ['Video & Animasi','Video Promosi & Company Profile','Thumbnail video kegiatan, company profile, dan dokumentasi — Premiere Pro, After Effects, CapCut Pro.','video'],
+ ['Video & Animasi','Animasi Edukasi — Suasana Kantor','Animasi pembelajaran bahasa Jepang untuk LMS, dibuat dengan Moho dan Blender.','anim-kantor'],
+ ['Video & Animasi','Animasi Edukasi — Taman Sakura','Scene animasi untuk materi belajar siswa, dari storyboard hingga render.','anim-sakura'],
+ ['Video & Animasi','Animasi Edukasi — Format Mobile','Materi animasi interaktif yang dioptimalkan untuk ditonton di ponsel.','anim-mobile'],
+ ['Social Media','Social Media Design','Pengelolaan konten Instagram dan TikTok ISO Jepang — desain feed, story, dan video pendek.','sosmed'],
+ ['Social Media','Instagram Feed 1080×1350','Desain promosi program, info lowongan magang, dan konten edukasi.','feed-1350'],
+ ['Social Media','Instagram Feed 1080×1080','Seri konten edukasi dan kampanye pendaftaran siswa.','feed-1080'],
+ ['Social Media','Holiday Greeting Story 1080×1920','Ucapan hari besar dengan identitas brand yang konsisten.','story'],
+ ['Web & Campaign','Campaign Landing Page','Landing page program kelas online bahasa Jepang gratis untuk kampanye digital — WordPress.','landing'],
+ ['Print & Event','Flyer & Brosur','Materi cetak untuk lomba konten kreatif dan program kerja & magang ke Jepang.','flyer'],
+ ['Print & Event','Flyer A5','Seri flyer program pemagangan, kelas migran, dan pendaftaran.','flyer-a5'],
+ ['Print & Event','X-Banner "Goes to Japan"','Desain banner berdiri untuk event dan pameran.','xbanner'],
+ ['Print & Event','Backdrop Booth Event','Backdrop booth "Raih Kesempatan Magang & Bekerja di Jepang".','backdrop'],
+ ['Print & Event','Roll Banner Job Fair','Roll banner untuk job fair nasional dan promosi kelas online.','roll-banner']];
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+document.getElementById('skills').innerHTML=skills.map(([t,d,k])=>`<div class="card skill"><h3>${esc(t)}</h3><p>${esc(d)}</p><em>${esc(k)}</em></div>`).join('');
+const cats=['Semua','Video & Animasi','Social Media','Web & Campaign','Print & Event'];
+function renderWorks(cat){
+  document.getElementById('filters').innerHTML=cats.map(c=>`<button type="button" aria-pressed="${c===cat}" data-cat="${esc(c)}">${esc(c)}</button>`).join('');
+  document.getElementById('works').innerHTML=works.filter(w=>cat==='Semua'||w[0]===cat).map(([c,t,d,f])=>`<a class="card work" href="assets/${f}.jpg" target="_blank" rel="noopener"><div class="img"><img src="assets/${f}.jpg" alt="${esc(t)}" loading="lazy"></div><div class="meta"><small>${esc(c)}</small><h3>${esc(t)}</h3><p>${esc(d)}</p></div></a>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('button');if(b)renderWorks(b.dataset.cat)});
+renderWorks('Semua');
+
+const pages=['tentang','keahlian','karya','kontak'];
+function show(id){
+  if(!pages.includes(id)) id='tentang';
+  pages.forEach(p=>document.getElementById(p).classList.toggle('show',p===id));
+  document.querySelectorAll('.rlink[data-go]').forEach(b=>{const on=b.dataset.go===id;b.classList.toggle('on',on);b.setAttribute('aria-current',on?'page':'false')});
+  window.scrollTo(0,0);
+}
+document.addEventListener('click',e=>{const t=e.target.closest('[data-go]');if(!t)return;e.preventDefault();const id=t.dataset.go;if(location.hash!=='#'+id)history.pushState(null,'','#'+id);show(id);document.activeElement&&document.activeElement.blur()});
+window.addEventListener('popstate',()=>show(location.hash.slice(1)));
+show(location.hash.slice(1));
+</script>
+</body>
+</html>
