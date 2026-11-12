@@ -137,6 +137,45 @@ main{margin-left:64px;position:relative;min-height:100vh}
 }
 @media (min-width:641px) and (max-width:900px){.works{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
+/* ===== Halaman detail karya ===== */
+.work{cursor:pointer;text-align:left;font:inherit;padding:0}
+.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px 0 14px;border-radius:999px;border:1.5px solid #CFCCC3;background:#fff;color:var(--ink);font-size:14px;font-weight:600;cursor:pointer;align-self:flex-start}
+.back:hover{border-color:var(--ink)}
+.dhead{display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.dhead .txt{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.dhead h1{font-size:clamp(42px,5.4vw,72px);line-height:.98}
+.dhead .txt p{font-size:16px;color:#555;max-width:620px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.chips span{display:inline-flex;gap:6px;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13px;color:#555}
+.chips b{font-weight:600;color:var(--ink)}
+.dcover{flex:1 1 440px;min-width:0;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--line);aspect-ratio:16/9;cursor:zoom-in}
+.dcover img{display:block;width:100%;height:100%;object-fit:cover}
+.gal{display:flex;gap:22px;align-items:flex-start}
+.gal .col{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:22px}
+.gal button{display:block;width:100%;margin:0;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;cursor:zoom-in;transition:transform .25s ease,box-shadow .25s ease}
+.gal button:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(20,20,20,.10)}
+.gal img{display:block;width:100%;height:auto}
+.more{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:8px;border-top:1px solid var(--line)}
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:60;background:rgba(12,12,12,.92);display:none;align-items:center;justify-content:center;padding:56px 72px}
+.lb.open{display:flex;animation:fade .2s ease}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);user-select:none}
+.lb button{position:absolute;display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;cursor:pointer}
+.lb button:hover{background:var(--accent);color:#111}
+.lb .x{top:14px;right:14px}
+.lb .pv{left:14px;top:50%;transform:translateY(-50%)}
+.lb .nx{right:14px;top:50%;transform:translateY(-50%)}
+.lb .ct{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:#ddd;font-size:14px;font-weight:500}
+body.lb-open{overflow:hidden}
+@media (max-width:900px){
+ .gal{flex-direction:column;align-items:stretch}
+ .gal .col{display:contents}
+ .dhead{gap:28px}
+ .lb{padding:64px 10px 56px}
+ .lb .pv,.lb .nx{top:auto;bottom:6px;transform:none}
+ .lb .pv{left:12px}.lb .nx{right:12px}
+}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -237,6 +276,11 @@ main{margin-left:64px;position:relative;min-height:100vh}
     </section>
   </div>
 
+  <!-- ===== HALAMAN DETAIL KARYA (diisi otomatis dari karya.js) ===== -->
+  <div class="page" id="detail">
+    <section class="wrap" style="display:flex;flex-direction:column;gap:40px" id="detailBody"></section>
+  </div>
+
   <!-- ===== HALAMAN 4: KONTAK ===== -->
   <div class="page" id="kontak">
     <section class="wrap contact">
@@ -253,6 +297,14 @@ main{margin-left:64px;position:relative;min-height:100vh}
   </div>
 </main>
 
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Pratinjau desain">
+  <img id="lbImg" alt="">
+  <button class="x" type="button" aria-label="Tutup" data-lb="close"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="pv" type="button" aria-label="Sebelumnya" data-lb="prev"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <button class="nx" type="button" aria-label="Berikutnya" data-lb="next"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+  <span class="ct" id="lbCt"></span>
+</div>
+
 <script src="karya.js"></script>
 <script>
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -260,18 +312,57 @@ document.getElementById('skills').innerHTML=skills.map(([t,d,k])=>`<div class="c
 const cats=['Semua','Video & Animasi','Social Media','Web & Campaign','Print & Event'];
 function renderWorks(cat){
   document.getElementById('filters').innerHTML=cats.map(c=>`<button type="button" aria-pressed="${c===cat}" data-cat="${esc(c)}">${esc(c)}</button>`).join('');
-  document.getElementById('works').innerHTML=works.filter(w=>cat==='Semua'||w[0]===cat).map(([c,t,d,f])=>`<a class="card work" href="assets/${f}.jpg" target="_blank" rel="noopener"><div class="img"><img src="assets/${f}.jpg" alt="${esc(t)}" loading="lazy"></div><div class="meta"><small>${esc(c)}</small><h3>${esc(t)}</h3><p>${esc(d)}</p></div></a>`).join('');
+  document.getElementById('works').innerHTML=works.filter(w=>cat==='Semua'||w[0]===cat).map(([c,t,d,f])=>`<a class="card work" href="#karya/${f}" data-go="karya/${f}"><div class="img"><img src="assets/${f}.jpg" alt="${esc(t)}" loading="lazy"></div><div class="meta"><small>${esc(c)}</small><h3>${esc(t)}</h3><p>${esc(d)}</p></div></a>`).join('');
 }
 document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('button');if(b)renderWorks(b.dataset.cat)});
 renderWorks('Semua');
 
 const pages=['tentang','keahlian','karya','kontak'];
+const icoBack='<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>';
+let lbList=[],lbI=0;
+function renderDetail(slug){
+  const w=works.find(x=>x[3]===slug); if(!w) return false;
+  const [c,t,d,f]=w, x=detail[slug]||{};
+  const gal=x.gambar&&x.gambar.length?x.gambar:[f];
+  lbList=gal;
+  const i=works.indexOf(w), nxt=works[(i+1)%works.length];
+  document.getElementById('detailBody').innerHTML=`
+    <button class="back" type="button" data-go="karya">${icoBack}Kembali ke Karya</button>
+    <div class="dhead">
+      <div class="txt"><p class="label">${esc(c)}</p><h1 class="display">${esc(x.judul||t)}</h1><p>${esc(x.isi||d)}</p>
+        ${x.info?`<div class="chips">${x.info.map(([a,b])=>`<span>${esc(a)} <b>${esc(b)}</b></span>`).join('')}</div>`:''}</div>
+      <div class="dcover" data-cover="1"><img src="assets/${f}.jpg" alt="${esc(t)}"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div><p class="label">Galeri</p><h2 class="display" style="font-size:clamp(34px,4vw,48px)">Hasil Desain</h2></div>
+      <div class="gal">${[0,1].map(col=>`<div class="col">${gal.map((g,k)=>k%2!==col?'':`<button type="button" data-lbi="${k}" style="order:${k}" aria-label="Perbesar desain ${k+1}"><img src="assets/${g}.jpg" alt="${esc(t)} — desain ${k+1}" loading="lazy"></button>`).join('')}</div>`).join('')}</div>
+    </div>
+    <div class="more"><button class="back" type="button" data-go="karya">${icoBack}Semua Karya</button>
+      <a class="btn btn-primary" href="#karya/${nxt[3]}" data-go="karya/${nxt[3]}">Karya berikutnya: ${esc(nxt[1])} →</a></div>`;
+  document.title=`${x.judul||t} — Rendi Ramdani`;
+  return true;
+}
 function show(id){
-  if(!pages.includes(id)) id='tentang';
-  pages.forEach(p=>document.getElementById(p).classList.toggle('show',p===id));
-  document.querySelectorAll('.rlink[data-go]').forEach(b=>{const on=b.dataset.go===id;b.classList.toggle('on',on);b.setAttribute('aria-current',on?'page':'false')});
+  let page=id, sub=null;
+  if(id.startsWith('karya/')){sub=id.slice(6);page=renderDetail(sub)?'detail':'karya'}
+  if(page!=='detail'&&!pages.includes(page)) page='tentang';
+  if(page!=='detail') document.title=baseTitle;
+  [...pages,'detail'].forEach(p=>document.getElementById(p).classList.toggle('show',p===page));
+  const nav=page==='detail'?'karya':page;
+  document.querySelectorAll('.rlink[data-go]').forEach(b=>{const on=b.dataset.go===nav;b.classList.toggle('on',on);b.setAttribute('aria-current',on?'page':'false')});
+  lbClose();
   window.scrollTo(0,0);
 }
+const baseTitle=document.title;
+const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg');
+function lbShow(k){lbI=(k+lbList.length)%lbList.length;lbImg.src=`assets/${lbList[lbI]}.jpg`;document.getElementById('lbCt').textContent=`${lbI+1} / ${lbList.length}`;lb.querySelectorAll('.pv,.nx').forEach(b=>b.style.display=lbList.length>1?'':'none')}
+function lbOpen(k){lbShow(k);lb.classList.add('open');document.body.classList.add('lb-open')}
+function lbClose(){lb.classList.remove('open');document.body.classList.remove('lb-open')}
+document.getElementById('detailBody').addEventListener('click',e=>{const g=e.target.closest('[data-lbi]');if(g)return lbOpen(+g.dataset.lbi);if(e.target.closest('[data-cover]'))lbOpen(0)});
+lb.addEventListener('click',e=>{const b=e.target.closest('[data-lb]');if(b){b.dataset.lb==='close'?lbClose():lbShow(lbI+(b.dataset.lb==='next'?1:-1));return}if(e.target===lb)lbClose()});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')lbClose();if(e.key==='ArrowRight')lbShow(lbI+1);if(e.key==='ArrowLeft')lbShow(lbI-1)});
+let tx=null;lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)lbShow(lbI+(dx<0?1:-1));tx=null});
 document.addEventListener('click',e=>{const t=e.target.closest('[data-go]');if(!t)return;e.preventDefault();const id=t.dataset.go;if(location.hash!=='#'+id)history.pushState(null,'','#'+id);show(id);document.activeElement&&document.activeElement.blur()});
 window.addEventListener('popstate',()=>show(location.hash.slice(1)));
 show(location.hash.slice(1));
