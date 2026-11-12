@@ -44,6 +44,15 @@ button{font-family:inherit}
 .rlink:hover,.rlink:focus-visible{background:#F1F0EA;color:var(--ink)}
 .rlink.on{background:#F1F0EA;color:var(--ink);font-weight:600;box-shadow:inset 3px 0 0 #9DB300}
 .rcta{border:0;width:100%;text-align:left;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:42px;padding:0 11px;border-radius:10px;background:var(--accent);color:#111;font-weight:600;font-size:14px;margin-top:6px}
+/* Desktop: sidebar penuh setinggi layar, isi menyebar rata sampai bawah */
+@media (min-width:901px){
+ .rail{height:100vh}
+ .rail-panel{height:100vh;max-height:none;border-radius:0;border-bottom:0;padding:clamp(16px,3vh,32px) 10px clamp(16px,3vh,28px);gap:clamp(10px,2.4vh,28px)}
+ .rail-panel nav{gap:clamp(2px,.7vh,8px)!important}
+ .rlink{min-height:clamp(40px,5.6vh,58px)}
+ .rprof img{width:clamp(40px,5vh,52px);height:clamp(40px,5vh,52px)}
+ .rcta{margin-top:auto;min-height:clamp(42px,5.8vh,58px)}
+}
 main{margin-left:64px;position:relative;min-height:100vh}
 .dim{position:fixed;inset:0 0 0 64px;background:rgba(15,15,15,.45);opacity:0;pointer-events:none;transition:opacity .28s ease;z-index:25}
 @media (hover:hover) and (min-width:901px){.rail:hover ~ .dim,.rail:focus-within ~ .dim{opacity:1}}
