@@ -81,6 +81,9 @@ main{margin-left:64px;position:relative;min-height:100vh}
 .tl small{font-size:14px;color:#616161}
 .tl h3{font-size:20px;font-weight:600;color:var(--ink)}
 .tl p{margin-top:8px;font-size:15px;color:#555;max-width:640px}
+.tl ul{margin:10px 0 0;padding-left:20px;max-width:680px;display:flex;flex-direction:column;gap:6px}
+.tl li{font-size:15px;color:#555;line-height:1.55}
+.tl li::marker{color:#9DB300}
 .grid{display:grid;gap:18px}
 .skills{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
 .skill{padding:26px;display:flex;flex-direction:column;gap:10px}
@@ -242,16 +245,28 @@ body.lb-open{overflow:hidden}
         <div style="flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:28px">
           <div><p class="label">Pengalaman</p><h2 class="display h2">Perjalanan Karier</h2></div>
           <div class="timeline">
-            <div class="tl"><small>Jun 2022 – Sekarang · Kota Depok</small><h3>Multimedia &amp; Content Creator — ISO Jepang</h3><p>Mengedit video promosi, corporate, dan campaign; memproduksi animasi 2D/3D untuk materi pembelajaran; mendesain materi promosi; mengelola konten Instagram, TikTok, YouTube, dan Facebook; menyusun strategi digital marketing; serta mengelola website WordPress, landing page, dan LMS.</p></div>
-            <div class="tl past" style="padding-bottom:0"><small>Jul 2020 – Sep 2021 · Jakarta</small><h3>Security — PT Kereta Api Indonesia</h3><p>Patroli dan pengawasan area stasiun, penanganan situasi darurat, serta pelaporan kegiatan dan insiden.</p></div>
+            <div class="tl"><small>Jun 2022 – Sekarang · Kota Depok</small><h3>Multimedia &amp; Content Creator — ISO Jepang</h3><ul>
+              <li>Mengedit video promosi, corporate, kolaborasi, dan campaign untuk media sosial dan YouTube menggunakan Adobe Premiere Pro, Adobe After Effects, dan CapCut Pro, termasuk motion graphic.</li>
+              <li>Memproduksi video animasi 2D dan 3D untuk materi pembelajaran menggunakan Moho dan Blender.</li>
+              <li>Merancang dan mengelola Learning Management System (LMS) interaktif untuk pembelajaran digital.</li>
+              <li>Membuat desain grafis (logo, poster, banner, ilustrasi 3D, materi promosi) menggunakan Adobe Photoshop, Adobe Illustrator, Affinity Designer, dan Canva Pro.</li>
+              <li>Merencanakan, memproduksi, dan mengelola konten Instagram, TikTok, YouTube, dan Facebook, termasuk content planning, copywriting, dan analisis performa konten.</li>
+              <li>Menyusun strategi digital marketing untuk meningkatkan brand awareness dan jumlah pendaftar.</li>
+              <li>Melakukan fotografi dan videografi untuk konten produk, event, dokumentasi, dan media sosial.</li>
+            </ul></div>
+            <div class="tl past" style="padding-bottom:0"><small>Jul 2020 – Sep 2021 · Jakarta</small><h3>Security — PT Kereta Api Indonesia</h3><ul>
+              <li>Melakukan patroli dan pengawasan rutin di area perkeretaapian untuk memastikan keselamatan dan keamanan.</li>
+              <li>Menanggapi situasi darurat seperti kebakaran, kecelakaan, dan gangguan.</li>
+              <li>Menjaga kebersihan dan ketertiban area stasiun.</li>
+              <li>Melaporkan kegiatan dan insiden kepada teknisi lokomotif.</li>
+            </ul></div>
           </div>
         </div>
         <div style="flex:1 1 300px;display:flex;flex-direction:column;gap:18px">
           <p class="label">Pendidikan</p>
           <div class="card" style="padding:22px"><h3 style="font-size:17px;font-weight:600">SMK Bina Informatika</h3><p style="font-size:14px;color:#5A5A5A">Teknik Komputer dan Jaringan · 2017 – 2020</p></div>
-          <div class="card" style="padding:22px"><h3 style="font-size:17px;font-weight:600">Universitas Terbuka</h3><p style="font-size:14px;color:#5A5A5A">2024 – Sekarang</p></div>
           <p class="label" style="margin-top:10px">Tools</p>
-          <p style="font-size:15px;color:#4A4A4A">Premiere Pro · After Effects · CapCut Pro · Photoshop · Illustrator · Affinity Designer · Lightroom · Canva · Blender · Moho · Figma · WordPress</p>
+          <p style="font-size:15px;color:#4A4A4A">Premiere Pro · After Effects · CapCut Pro · Photoshop · Illustrator · Affinity Designer · Lightroom · Canva · Blender · Moho · Figma · WordPress · Claude AI</p>
         </div>
       </div>
     </section>
@@ -260,7 +275,7 @@ body.lb-open{overflow:hidden}
   <!-- ===== HALAMAN 2: KEAHLIAN ===== -->
   <div class="page" id="keahlian">
     <section class="wrap" style="display:flex;flex-direction:column;gap:40px">
-      <div><p class="label">Keahlian</p><h2 class="display h2">Yang Bisa Saya Kerjakan</h2></div>
+      <div><p class="label">Keahlian</p><h2 class="display h2">Dari Ide Jadi Karya Nyata</h2></div>
       <div class="grid skills" id="skills"></div>
     </section>
   </div>

@@ -15,9 +15,10 @@ const skills =[
  ['Video Editing','Video promosi, corporate, campaign, dan konten pendek untuk media sosial.','Premiere Pro · After Effects · CapCut Pro'],
  ['Motion Graphic','Animasi teks, transisi, dan elemen visual yang membuat pesan lebih hidup.','After Effects'],
  ['Desain Grafis','Feed media sosial, flyer, brosur, banner, logo, dan materi promosi.','Photoshop · Illustrator · Affinity · Canva'],
- ['Animasi 2D/3D','Video animasi edukasi dan ilustrasi 3D untuk materi pembelajaran.','Moho · Blender'],
+ ['Art Animasi 2D/3D','Video animasi edukasi, karakter, dan ilustrasi 3D untuk materi pembelajaran.','Moho · Blender'],
  ['Social Media Content','Content planning, copywriting, dan analisis performa konten.','Instagram · TikTok · YouTube · Facebook'],
- ['Fotografi & Website','Foto & video produk dan event, serta landing page dan LMS.','Lightroom · WordPress · Figma']];
+ ['Fotografi & Videografi','Dokumentasi event, acara resmi, produk, dan kegiatan untuk konten media sosial.','Kamera DSLR · Lightroom · Premiere Pro'],
+ ['Website & Landing Page','Website, landing page kampanye digital, dan LMS interaktif untuk pembelajaran.','WordPress · Figma']];
 const works =[
  ['Video & Animasi','Animasi Edukasi','Animasi pembelajaran bahasa Jepang untuk LMS — suasana kantor, taman sakura, dan format mobile — dibuat dengan Moho dan Blender.','anim-kantor'],
  ['Video & Animasi','Video Promosi & Company Profile','Thumbnail video kegiatan, company profile, dan dokumentasi — Premiere Pro, After Effects, CapCut Pro.','video'],
