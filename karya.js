@@ -5,7 +5,7 @@
    KARYA: satu baris = satu karya
    ['Kategori', 'Judul', 'Keterangan singkat', 'nama-file-gambar']
    - Kategori harus salah satu dari: 'Video & Animasi', 'Social Media',
-     'Print & Event'
+     'Print & Event', 'Fotografi'
    - Gambar disimpan di folder assets/ sebagai .jpg (rasio 16:9),
      tulis namanya TANPA .jpg
    - Karya paling atas tampil paling depan
@@ -25,7 +25,8 @@ const works =[
  ['Social Media','Instagram Feed 1080×1350','Desain promosi program, info lowongan magang, dan konten edukasi.','feed-1350'],
  ['Social Media','Instagram Feed 1080×1080','Seri konten edukasi dan kampanye pendaftaran siswa.','feed-1080'],
  ['Social Media','Holiday Greeting Story','Ucapan hari besar format story 1080×1920 dengan identitas brand yang konsisten.','story'],
- ['Print & Event','Flyer A5','Seri flyer program pemagangan, kelas migran, dan pendaftaran.','flyer-a5']];
+ ['Print & Event','Flyer A5','Seri flyer program pemagangan, kelas migran, dan pendaftaran.','flyer-a5'],
+ ['Fotografi','Karya Fotografer','Foto kegiatan, event, dan materi promosi ISO Jepang.','fotografi']];
 
 /* =========================================================
    HALAMAN DETAIL KARYA

@@ -309,7 +309,7 @@ body.lb-open{overflow:hidden}
 <script>
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 document.getElementById('skills').innerHTML=skills.map(([t,d,k])=>`<div class="card skill"><h3>${esc(t)}</h3><p>${esc(d)}</p><em>${esc(k)}</em></div>`).join('');
-const cats=['Semua','Video & Animasi','Social Media','Print & Event'];
+const cats=['Semua','Video & Animasi','Social Media','Print & Event','Fotografi'];
 function renderWorks(cat){
   document.getElementById('filters').innerHTML=cats.map(c=>`<button type="button" aria-pressed="${c===cat}" data-cat="${esc(c)}">${esc(c)}</button>`).join('');
   document.getElementById('works').innerHTML=works.filter(w=>cat==='Semua'||w[0]===cat).map(([c,t,d,f])=>`<a class="card work" href="#karya/${f}" data-go="karya/${f}"><div class="img"><img src="assets/${f}.jpg" alt="${esc(t)}" loading="lazy"></div><div class="meta"><small>${esc(c)}</small><h3>${esc(t)}</h3><p>${esc(d)}</p></div></a>`).join('');
