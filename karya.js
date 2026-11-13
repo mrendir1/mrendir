@@ -26,7 +26,7 @@ const works =[
  ['Social Media','Instagram Feed 1080×1080','Seri konten edukasi dan kampanye pendaftaran siswa.','feed-1080'],
  ['Social Media','Holiday Greeting Story','Ucapan hari besar format story 1080×1920 dengan identitas brand yang konsisten.','story'],
  ['Print & Event','Flyer A5','Seri flyer program pemagangan, kelas migran, dan pendaftaran.','flyer-a5'],
- ['Fotografi','Karya Fotografer','Foto kegiatan, event, dan materi promosi ISO Jepang.','fotografi']];
+ ['Fotografi','Karya Fotografer','Dokumentasi kegiatan, acara resmi, dan momen peserta program ISO Jepang.','fotografi']];
 
 /* =========================================================
    HALAMAN DETAIL KARYA
@@ -36,6 +36,8 @@ const works =[
    - info   : label kecil [['Label','Isi'], ...] (boleh dikosongkan)
    - gambar : daftar file di assets/ TANPA .jpg, tampil 2 kolom
               (desktop) / 1 kolom (HP). Klik gambar = diperbesar.
+   - tata:'foto' : mode foto — foto potret tampil 2 per baris,
+              foto landscape (beri akhiran |L) 1 baris penuh.
    Karya yang belum punya detail tetap bisa dibuka (tampil
    gambar sampulnya saja).
    ========================================================= */
@@ -51,5 +53,12 @@ const detail = {
   isi: 'Seri flyer cetak dan digital untuk program SSW (Tokutei Ginou), Visa Gijinkoku, pemagangan, dan Kelas Migran ISO Jepang. Setiap desain menonjolkan informasi yang paling dicari calon peserta — bidang kerja, perkiraan gaji, persyaratan, lokasi penempatan, dan QR pendaftaran — agar mudah dipahami dalam sekali lihat.',
   info: [['Klien','ISO Jepang'],['Jenis','Flyer A5 & feed promosi'],['Jumlah','10 desain']],
   gambar: ['flyer-a5-01','flyer-a5-02','flyer-a5-03','flyer-a5-04','flyer-a5-05','flyer-a5-06','flyer-a5-07','flyer-a5-08','flyer-a5-09','flyer-a5-10']
+ }
+ ,'fotografi': {
+  judul: 'Karya Fotografer — Best Moment',
+  isi: 'Dokumentasi foto acara resmi, kunjungan, dan kegiatan peserta program kerja ke Jepang. Fokus pada ekspresi dan momen penting — sambutan, penyerahan bantuan, foto bersama, hingga suasana seleksi peserta.',
+  info: [['Klien','ISO Jepang'],['Jenis','Event & dokumentasi'],['Jumlah','13 foto']],
+  tata: 'foto',
+  gambar: ['foto-01|L','foto-02','foto-03','foto-04|L','foto-05','foto-06','foto-07|L','foto-08','foto-09','foto-10|L','foto-11|L','foto-12|L','foto-13|L']
  }
 };
