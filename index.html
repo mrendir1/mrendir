@@ -324,7 +324,7 @@ body.lb-open{overflow:hidden}
   <span class="ct" id="lbCt"></span>
 </div>
 
-<script src="karya.js?v=20261113a"></script>
+<script src="karya.js?v=20261113b"></script>
 <script>
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 document.getElementById('skills').innerHTML=skills.map(([t,d,k])=>`<div class="card skill"><h3>${esc(t)}</h3><p>${esc(d)}</p><em>${esc(k)}</em></div>`).join('');
@@ -357,7 +357,7 @@ function renderDetail(slug){
       <div class="dcover" data-cover="1"><img src="assets/${f}.jpg" alt="${esc(t)}"></div>
     </div>
     <div style="display:flex;flex-direction:column;gap:22px">
-      <div><p class="label">Galeri</p><h2 class="display" style="font-size:clamp(34px,4vw,48px)">${x.tata==='foto'?'Hasil Foto':'Hasil Desain'}</h2></div>
+      <div><p class="label">Galeri</p><h2 class="display" style="font-size:clamp(34px,4vw,48px)">${x.tata==='foto'?(c==='Fotografi'?'Hasil Foto':'Hasil Karya'):'Hasil Desain'}</h2></div>
       ${galHtml}
     </div>
     <div class="more"><button class="back" type="button" data-go="karya">${icoBack}Semua Karya</button>

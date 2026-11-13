@@ -45,9 +45,10 @@ const works =[
 const detail = {
  'anim-kantor': {
   judul: 'Animasi Edukasi Bahasa Jepang',
-  isi: 'Scene animasi untuk materi pembelajaran bahasa Jepang di LMS, dari storyboard hingga render — termasuk versi yang dioptimalkan untuk ditonton di ponsel.',
-  info: [['Klien','ISO Jepang'],['Tools','Moho · Blender']],
-  gambar: ['anim-kantor','anim-sakura','anim-mobile']
+  isi: 'Video animasi untuk materi pembelajaran bahasa Jepang di LMS ISO Jepang — dari storyboard, desain karakter, hingga render. Setiap scene menggambarkan situasi nyata seperti di kantor, sekolah, supermarket, dan percakapan telepon, lengkap dengan karakter pengajar dan teks materi.',
+  info: [['Klien','ISO Jepang'],['Tools','Moho · Blender'],['Jumlah','7 scene']],
+  tata: 'foto',
+  gambar: ['animasi-01|L','animasi-02|L','animasi-03','animasi-04','animasi-05','animasi-06','animasi-07|L']
  },
  'flyer-a5': {
   judul: 'Flyer A5 — Program Kerja & Magang ke Jepang',
