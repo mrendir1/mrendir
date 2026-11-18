@@ -78,3 +78,18 @@ const detail = {
   gambar: ['feed1350-03','feed1350-04','feed1350-05','feed1350-06','feed1350-11','feed1350-12','feed1350-01','feed1350-02','feed1350-07','feed1350-08','feed1350-09','feed1350-10']
  }
 };
+
+/* =========================================================
+   JASA FREELANCE (halaman #jasa)
+   [ 'Nama layanan', 'Penjelasan singkat', 'Contoh hasil', 'Harga' ]
+   Harga boleh dikosongkan '' → tampil "Harga sesuai kebutuhan".
+   ========================================================= */
+const jasa = [
+ ['Video Editing','Editing video promosi, company profile, event, dan konten pendek dengan subtitle, musik, dan color grading.','Reels/TikTok · YouTube · Video event',''],
+ ['Motion Graphic','Animasi teks, logo, dan infografis bergerak untuk iklan, opening video, atau penjelasan produk.','Logo animation · Explainer · Lower third',''],
+ ['Desain Grafis','Feed Instagram, story, flyer, banner, poster, dan materi cetak yang rapi dan sesuai identitas brand.','Feed & story · Flyer · X-banner',''],
+ ['Animasi 2D/3D','Video animasi edukasi atau promosi dengan karakter, dari storyboard sampai render.','Animasi edukasi · Karakter · Scene 3D',''],
+ ['Fotografi & Videografi','Dokumentasi acara, foto produk, dan pengambilan video untuk konten media sosial.','Event · Produk · Behind the scene',''],
+ ['Kelola Konten Media Sosial','Perencanaan konten, desain, copywriting, dan jadwal unggah untuk Instagram dan TikTok.','Content plan · Desain · Caption','']
+];
+

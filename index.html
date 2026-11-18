@@ -90,6 +90,11 @@ main{margin-left:64px;position:relative;min-height:100vh}
 .skill h3{font-size:19px;font-weight:600;color:var(--ink)}
 .skill p{font-size:15px;color:var(--muted)}
 .skill em{font-style:normal;font-size:13px;font-weight:500;color:var(--accent-text)}
+.price{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:14px;font-weight:600;color:var(--ink)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:6px;font-size:14px;color:#555}
+.steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#111;font-weight:700}
+.steps b{font-size:16px;color:var(--ink)}
 .filters{display:flex;gap:10px;flex-wrap:wrap}
 .filters button{min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid #CFCCC3;background:transparent;color:#2B2B2B;font-size:14px;font-weight:600;cursor:pointer}
 .filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#111}
@@ -213,6 +218,7 @@ body.lb-open{overflow:hidden}
       <button class="rlink" data-go="tentang"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg><span class="lbl">Tentang Saya</span></button>
       <button class="rlink" data-go="keahlian"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg><span class="lbl">Keahlian</span></button>
       <button class="rlink" data-go="karya"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="lbl">Karya</span></button>
+      <button class="rlink" data-go="jasa"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg><span class="lbl">Jasa Freelance</span></button>
       <button class="rlink" data-go="kontak"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="lbl">Kontak</span></button>
     </nav>
     <nav aria-label="Tautan" style="display:flex;flex-direction:column;gap:2px">
@@ -307,6 +313,31 @@ body.lb-open{overflow:hidden}
     <section class="wrap" style="display:flex;flex-direction:column;gap:40px" id="detailBody"></section>
   </div>
 
+  <!-- ===== HALAMAN JASA FREELANCE (isi dari karya.js → jasa) ===== -->
+  <div class="page" id="jasa">
+    <section class="wrap" style="display:flex;flex-direction:column;gap:40px">
+      <div style="display:flex;flex-direction:column;gap:14px;max-width:720px">
+        <p class="label">Jasa Freelance</p>
+        <h2 class="display h2">Butuh Konten? Saya Bantu</h2>
+        <p style="font-size:16px;color:#555">Selain bekerja penuh waktu, saya menerima proyek lepas di luar jam kerja untuk bisnis, UMKM, lembaga, dan personal brand. Hasilnya bisa dilihat di halaman Karya.</p>
+      </div>
+      <div class="grid skills" id="jasaList"></div>
+      <div class="card" style="padding:28px;display:flex;flex-direction:column;gap:18px">
+        <h3 style="font-size:20px;font-weight:600">Cara Kerja Sama</h3>
+        <ol class="steps">
+          <li><b>Konsultasi</b><span>Ceritakan kebutuhan, contoh referensi, dan tenggat lewat WhatsApp.</span></li>
+          <li><b>Penawaran</b><span>Saya kirim rincian pekerjaan, harga, dan estimasi waktu.</span></li>
+          <li><b>Pengerjaan</b><span>Draf pertama dikirim untuk dicek, termasuk revisi sesuai kesepakatan.</span></li>
+          <li><b>Selesai</b><span>File akhir dikirim dalam format siap pakai.</span></li>
+        </ol>
+      </div>
+      <div class="cta-box">
+        <div><h3 style="font-size:20px;font-weight:600">Diskusikan proyekmu</h3><p style="font-size:15px;color:#5A5A5A">Gratis konsultasi, balasan biasanya di hari yang sama.</p></div>
+        <a class="btn btn-primary" href="https://wa.me/6283805429308?text=Halo%20Rendi%2C%20saya%20mau%20tanya%20jasa%20freelance%20untuk%20" target="_blank" rel="noopener">Tanya via WhatsApp</a>
+      </div>
+    </section>
+  </div>
+
   <!-- ===== HALAMAN 4: KONTAK ===== -->
   <div class="page" id="kontak">
     <section class="wrap contact">
@@ -331,9 +362,10 @@ body.lb-open{overflow:hidden}
   <span class="ct" id="lbCt"></span>
 </div>
 
-<script src="karya.js?v=20261118e"></script>
+<script src="karya.js?v=20261118f"></script>
 <script>
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+document.getElementById('jasaList').innerHTML=(typeof jasa!=='undefined'?jasa:[]).map(([t,d,k,h])=>`<div class="card skill"><h3>${esc(t)}</h3><p>${esc(d)}</p><em>${esc(k)}</em><span class="price">${esc(h||'Harga sesuai kebutuhan')}</span></div>`).join('');
 document.getElementById('skills').innerHTML=skills.map(([t,d,k])=>`<div class="card skill"><h3>${esc(t)}</h3><p>${esc(d)}</p><em>${esc(k)}</em></div>`).join('');
 const cats=['Semua','Video & Animasi','Social Media','Print & Event','Fotografi'];
 function renderWorks(cat){
@@ -343,7 +375,7 @@ function renderWorks(cat){
 document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('button');if(b)renderWorks(b.dataset.cat)});
 renderWorks('Semua');
 
-const pages=['tentang','keahlian','karya','kontak'];
+const pages=['tentang','keahlian','karya','jasa','kontak'];
 const icoBack='<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>';
 let lbList=[],lbI=0;
 function renderDetail(slug){
