@@ -75,6 +75,6 @@ const detail = {
   isi: 'Konten feed Instagram untuk ISO Jepang, LPPR Indonesia, AIKO Indonesia, dan PT Multi Lintas Buana Raya — promosi kelas online gratis, info beasiswa pendidikan, konten edukasi Mitos vs Fakta, ucapan resmi, hingga kartu ucapan Tahun Baru 2026 berbahasa Jepang untuk mitra di Jepang.',
   info: [['Klien','ISO Jepang · LPPR · AIKO · Multi LBR'],['Format','Feed 1080×1350'],['Jumlah','12 desain']],
   tata: 'feed',
-  gambar: ['feed1350-01','feed1350-02','feed1350-03','feed1350-04','feed1350-05','feed1350-06','feed1350-07','feed1350-08','feed1350-09','feed1350-10','feed1350-11','feed1350-12']
+  gambar: ['feed1350-03','feed1350-04','feed1350-05','feed1350-06','feed1350-11','feed1350-12','feed1350-01','feed1350-02','feed1350-07','feed1350-08','feed1350-09','feed1350-10']
  }
 };
