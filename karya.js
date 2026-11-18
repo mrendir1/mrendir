@@ -63,4 +63,11 @@ const detail = {
   tata: 'foto',
   gambar: ['foto-01|L','foto-02','foto-03','foto-04|L','foto-05','foto-06','foto-07|L','foto-08','foto-09','foto-10|L','foto-11|L','foto-12|L','foto-13|L']
  }
+ ,'story': {
+  judul: 'Holiday Greeting Story',
+  isi: 'Seri ucapan hari besar format story 1080×1920 untuk ISO Jepang, LPPR Indonesia, dan PT Multi Lintas Buana Raya — mulai dari HUT RI, Isra Mi\'raj, Idul Fitri, Idul Adha, Natal, Imlek, Hari Kartini, hingga Hari Buruh. Setiap desain menyesuaikan suasana perayaannya tanpa meninggalkan identitas brand.',
+  info: [['Klien','ISO Jepang · LPPR · Multi LBR'],['Format','Story 1080×1920'],['Jumlah','10 desain']],
+  tata: 'story',
+  gambar: ['story-01','story-02','story-03','story-04','story-05','story-06','story-07','story-08','story-09','story-10']
+ }
 };
