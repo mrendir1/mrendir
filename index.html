@@ -179,6 +179,8 @@ body.lb-open{overflow:hidden}
  .gal.foto{display:grid;gap:10px}
  .gal.story{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
  .gal.story button{border-radius:10px}
+ .gal.feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start}
+ .gal.feed button{border-radius:10px}
  .gal.foto button{border-radius:10px}
  .dhead{gap:28px}
  .lb{padding:64px 10px 56px}
@@ -327,7 +329,7 @@ body.lb-open{overflow:hidden}
   <span class="ct" id="lbCt"></span>
 </div>
 
-<script src="karya.js?v=20261118c"></script>
+<script src="karya.js?v=20261118d"></script>
 <script>
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 document.getElementById('skills').innerHTML=skills.map(([t,d,k])=>`<div class="card skill"><h3>${esc(t)}</h3><p>${esc(d)}</p><em>${esc(k)}</em></div>`).join('');
@@ -350,7 +352,7 @@ function renderDetail(slug){
   lbList=gal;
   const item=(g,k)=>`<button type="button" data-lbi="${k}" style="order:${k}"${wide[k]?' class="wide"':''} aria-label="Perbesar ${k+1}"><img src="assets/${g}.jpg" alt="${esc(t)} — ${k+1}" loading="lazy"></button>`;
   const galHtml=x.tata==='story'?`<div class="gal story">${gal.map(item).join('')}</div>`:x.tata==='foto'?`<div class="gal foto">${gal.map(item).join('')}</div>`
-    :`<div class="gal">${[0,1].map(col=>`<div class="col">${gal.map((g,k)=>k%2!==col?'':item(g,k)).join('')}</div>`).join('')}</div>`;
+    :(()=>{const nc=x.tata==='feed'?3:2;return `<div class="gal${x.tata==='feed'?' feed':''}">${[...Array(nc).keys()].map(col=>`<div class="col">${gal.map((g,k)=>k%nc!==col?'':item(g,k)).join('')}</div>`).join('')}</div>`})();
   const i=works.indexOf(w), nxt=works[(i+1)%works.length];
   document.getElementById('detailBody').innerHTML=`
     <button class="back" type="button" data-go="karya">${icoBack}Kembali ke Karya</button>
