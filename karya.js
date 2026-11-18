@@ -27,7 +27,8 @@ const works =[
  ['Social Media','Instagram Feed 1080×1080','Seri konten edukasi dan kampanye pendaftaran siswa.','feed-1080'],
  ['Social Media','Holiday Greeting Story','Ucapan hari besar format story 1080×1920 dengan identitas brand yang konsisten.','story'],
  ['Print & Event','Flyer A5','Seri flyer program pemagangan, kelas migran, dan pendaftaran.','flyer-a5'],
- ['Fotografi','Karya Fotografer','Dokumentasi kegiatan, acara resmi, dan momen peserta program ISO Jepang.','fotografi']];
+ ['Fotografi','Karya Fotografer','Dokumentasi kegiatan, acara resmi, dan momen peserta program ISO Jepang.','fotografi'],
+ ['Social Media','Traffic Social Media','Hasil kelola Instagram & TikTok ISO Jepang — 1 video tembus 10 juta penonton dan 3,3 juta tayangan Instagram dalam setahun.','traffic']];
 
 /* =========================================================
    HALAMAN DETAIL KARYA
@@ -43,6 +44,25 @@ const works =[
    gambar sampulnya saja).
    ========================================================= */
 const detail = {
+ 'traffic': {
+  judul: 'Traffic Social Media — ISO Jepang',
+  isi: 'Hasil pengelolaan konten Instagram dan TikTok ISO Jepang: perencanaan konten, produksi dan editing video, desain, sampai unggah dan evaluasi performa.',
+  info: [['Akun','@isojepang · @isojepangofficial'],['Peran','Konten, editing, desain, posting']],
+  tata: 'stats',
+  blok: [
+   {judul:'Instagram @isojepang', sub:'Periode Nov 2024 – Nov 2025 (1 tahun) · Meta Business Suite', angka:[['3,3 JT','Tayangan'],['7 JT','Akun dijangkau'],['145,4 RB','Interaksi konten'],['52,4 RB','Pengikut'],['1.060','Total postingan']]},
+   {judul:'TikTok @isojepangofficial', sub:'Data publik akun', angka:[['29 RB','Pengikut'],['950,4 RB','Total suka'],['10 JT','Penonton video terpopuler']]}
+  ],
+  tiktok: '7461947235048131847',
+  tiktokJudul: 'Tips Lolos Wawancara Kerja Jepang · diunggah 20 Jan 2025',
+  bedah: [
+   ['Hasilnya','10 juta penonton, 541 ribu suka, 38,5 ribu disimpan, 12 ribu dibagikan, dan 2.406 komentar dari satu video berdurasi 2 menit 6 detik.'],
+   ['Topik tepat sasaran','Membahas hal yang paling dicari calon peserta — cara lolos wawancara kerja ke Jepang — sehingga penonton merasa video ini "untuk saya".'],
+   ['Tokoh nyata, bukan iklan','Menampilkan peserta asli dengan nomor seleksi di dada, dibuka dengan sapaan langsung ke kamera. Terasa jujur dan dekat.'],
+   ['Banyak disimpan dan dibagikan','Rasio simpan dan bagikan yang tinggi menandakan isinya dianggap berguna, sehingga algoritma terus menyebarkannya.'],
+   ['Ajakan yang jelas','Caption mengajak mengikuti seri tips berikutnya dan mencantumkan kontak, mengubah penonton menjadi pengikut dan calon pendaftar.']
+  ]
+ },
  'anim-kantor': {
   judul: 'Animasi Edukasi Bahasa Jepang',
   isi: 'Video animasi untuk materi pembelajaran bahasa Jepang di LMS ISO Jepang — dari storyboard, desain karakter, hingga render. Setiap scene menggambarkan situasi nyata seperti di kantor, sekolah, supermarket, dan percakapan telepon, lengkap dengan karakter pengajar dan teks materi.',
