@@ -52,9 +52,9 @@ const detail = {
  },
  'flyer-a5': {
   judul: 'Flyer A5 — Program Kerja & Magang ke Jepang',
-  isi: 'Seri flyer cetak dan digital untuk program pemagangan, SSW (Tokutei Ginou), Kelas Migran, Goes to School, rekrutmen pengajar, hingga Job Fair Nasional APPI. Setiap desain menonjolkan informasi yang paling dicari calon peserta — bidang kerja, perkiraan gaji, persyaratan, lokasi penempatan, dan QR pendaftaran — agar mudah dipahami dalam sekali lihat.',
-  info: [['Klien','ISO Jepang'],['Jenis','Flyer A5 & feed promosi'],['Jumlah','11 desain']],
-  gambar: ['flyer-a5-01','flyer-a5-02','flyer-a5-03','flyer-a5-04','flyer-a5-05','flyer-a5-06','flyer-a5-07','flyer-a5-08','flyer-a5-09','flyer-a5-10','flyer-a5-11']
+  isi: 'Seri flyer cetak dan digital untuk program pemagangan, SSW (Tokutei Ginou), Kelas Migran, Goes to School, Lomba Konten Kreatif, rekrutmen pengajar, hingga Job Fair Nasional APPI. Setiap desain menonjolkan informasi yang paling dicari calon peserta — bidang kerja, perkiraan gaji, persyaratan, lokasi penempatan, dan QR pendaftaran — agar mudah dipahami dalam sekali lihat.',
+  info: [['Klien','ISO Jepang'],['Jenis','Flyer A5 & feed promosi'],['Jumlah','12 desain']],
+  gambar: ['flyer-a5-01','flyer-a5-12','flyer-a5-02','flyer-a5-03','flyer-a5-04','flyer-a5-05','flyer-a5-06','flyer-a5-07','flyer-a5-08','flyer-a5-09','flyer-a5-10','flyer-a5-11']
  }
  ,'fotografi': {
   judul: 'Karya Fotografer — Best Moment',
