@@ -65,14 +65,14 @@ const detail = {
  },
  'anim-kantor': {
   judul: 'Animasi Edukasi Bahasa Jepang',
-  isi: 'Seri video animasi untuk kurikulum bahasa Jepang ISO Jepang berbasis buku Irodori — 54 bab yang dipakai di kelas online (LMS) agar siswa belajar lebih interaktif. Dikerjakan dari suara karakter, gambar, animasi, sampai editing akhir.',
+  isi: 'Seri video animasi untuk kurikulum bahasa Jepang ISO Jepang berbasis buku Irodori — 54 bab yang disiapkan untuk kelas online (LMS) agar siswa belajar lebih interaktif. Dikerjakan dari suara karakter, gambar, animasi, sampai editing akhir.',
   info: [['Klien','ISO Jepang'],['Durasi','±1–1,5 tahun'],['Hasil','54 bab animasi']],
   cerita: [
-   ['Tujuan','Membuat kurikulum pembelajaran siswa lebih interaktif. Video animasi ini menjadi materi utama kelas online di LMS ISO Jepang.'],
+   ['Tujuan','Membuat kurikulum pembelajaran siswa lebih interaktif. Video animasi ini disiapkan untuk kelas online di LMS ISO Jepang.'],
    ['Peran saya','Mengerjakan hampir seluruh proses: rekam suara untuk karakter AI Sensei, menggambar karakter dan latar, menganimasikan gerakan, hingga editing akhir.'],
    ['Tools','Moho Animation · Adobe Illustrator · Affinity Designer · Adobe Premiere Pro · Adobe Podcast'],
    ['Hasil','Selesai seluruhnya: Irodori A1-1, A2-1, dan A2-2, masing-masing 18 bab — total 54 bab animasi.'],
-   ['Tantangan','Saya memulai tanpa latar belakang animasi maupun menggambar. Saya belajar dari nol sampai bisa menggambar karakter sendiri dan menggerakkannya frame demi frame, lalu konsisten menyelesaikan 54 bab dalam ±1,5 tahun.']
+   ['Tantangan','Saya memulai tanpa latar belakang animasi maupun menggambar. Saya belajar dari nol sampai bisa menggambar karakter sendiri dan menggerakkannya secara manual tanpa rigging, lalu konsisten menyelesaikan 54 bab dalam ±1,5 tahun.']
   ],
   tata: 'foto',
   gambar: ['animasi-01|L','animasi-02|L','animasi-03','animasi-04','animasi-05','animasi-06','animasi-07|L']
