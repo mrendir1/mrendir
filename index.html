@@ -185,6 +185,15 @@ main{margin-left:64px;position:relative;min-height:100vh}
 .bedah b{font-size:15px;color:var(--ink)}
 .bedah p{font-size:15px;color:#555;margin-top:2px}
 .bedah .btn{align-self:flex-start}
+.story-cs{display:flex;flex-direction:column;gap:22px}
+.cs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cs-item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;gap:6px}
+.cs-item b{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text)}
+.cs-item p{font-size:15px;color:#3F3F3F;line-height:1.6}
+.cs-wide{grid-column:1 / -1;background:#151515;border-color:#151515}
+.cs-wide b{color:var(--accent)}
+.cs-wide p{color:#EDEDED}
+@media (max-width:700px){.cs-grid{grid-template-columns:1fr}}
 /* Lightbox */
 .lb{position:fixed;inset:0;z-index:60;background:rgba(12,12,12,.92);display:none;align-items:center;justify-content:center;padding:56px 72px}
 .lb.open{display:flex;animation:fade .2s ease}
@@ -381,7 +390,7 @@ body.lb-open{overflow:hidden}
   <span class="ct" id="lbCt"></span>
 </div>
 
-<script src="karya.js?v=20261118g"></script>
+<script src="karya.js?v=20261118h"></script>
 <script>
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 document.getElementById('jasaList').innerHTML=(typeof jasa!=='undefined'?jasa:[]).map(([t,d,k,h])=>`<div class="card skill"><h3>${esc(t)}</h3><p>${esc(d)}</p><em>${esc(k)}</em><span class="price">${esc(h||'Harga sesuai kebutuhan')}</span></div>`).join('');
@@ -416,6 +425,7 @@ function renderDetail(slug){
         ${x.info?`<div class="chips">${x.info.map(([a,b])=>`<span>${esc(a)} <b>${esc(b)}</b></span>`).join('')}</div>`:''}</div>
       <div class="dcover" data-cover="1"><img src="assets/${f}.jpg" alt="${esc(t)}"></div>
     </div>
+    ${x.cerita?`<div class="story-cs"><div><p class="label">Studi Kasus</p><h2 class="display" style="font-size:clamp(34px,4vw,48px)">Cerita di Balik Proyek</h2></div><div class="cs-grid">${x.cerita.map(([a,b],i)=>`<div class="cs-item${i===x.cerita.length-1?' cs-wide':''}"><b>${esc(a)}</b><p>${esc(b)}</p></div>`).join('')}</div></div>`:''}
     <div style="display:flex;flex-direction:column;gap:22px">
       <div><p class="label">${x.tata==='stats'?'Statistik':'Galeri'}</p><h2 class="display" style="font-size:clamp(34px,4vw,48px)">${x.tata==='stats'?'Data &amp; Hasil':x.tata==='foto'?(c==='Fotografi'?'Hasil Foto':'Hasil Karya'):'Hasil Desain'}</h2></div>
       ${galHtml}
